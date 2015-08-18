@@ -52,10 +52,18 @@ package
 			mqttSocket.addEventListener(MQTTEvent.CLOSE, onClose); //dispatched when the connection is closed
 			mqttSocket.addEventListener(MQTTEvent.ERROR, onError); //dispatched when an error occurs
 			mqttSocket.addEventListener(MQTTEvent.MESSGE, onMessage); //dispatched when socket can be read
+            mqttSocket.addEventListener(MQTTEvent.PUBLISH,onPublish);
+
 			//try to connect
 			mqttSocket.connect();
 		}
 		
+        private function onPublish(event:MQTTEvent):void {
+            message.text="onPublish:" +  event.message;
+                            
+            LOG.info("-->MQTT onPublish: {0}",event.message);
+        }
+
 		private function onConnect(event:MQTTEvent):void
 		{
 			message.text="onConnect:" +  event.message;
