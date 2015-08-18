@@ -18,14 +18,14 @@ include source path  third/src
 
 --------------------------
 python_mqtt_client.py
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
 #coding=utf-8
 import paho.mqtt.publish as publish
 import json
 
-publish.single('root_message','hello_for_python_client', hostname = '127.0.0.1') 
+publish.single('root_message','hello_for_python_client', hostname = '127.0.0.1')
+
 json_msg = json.dumps({'name':'zhangsan','pwd':'12345','icon':''},encoding='utf-8')
-publish.single('a-b',json_msg, hostname = '127.0.0.1')  
 
-
-
+publish.single('a-b',json_msg, hostname = '127.0.0.1')
