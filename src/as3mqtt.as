@@ -43,7 +43,7 @@ package
 			
 			
 			//Creating a Socket
-			this.mqttSocket=new MQTTSocket(MY_HOST, MY_PORT, "test", "test");
+			this.mqttSocket=new MQTTSocket(MY_HOST, MY_PORT, "", "","mqtt","as3mqtt");
 			//Notice: You need to define a cross domain policy file at your remote server root document, or have a policy file server on the target. 
 			//Security.allowDomain("*");
 			//			Security.loadPolicyFile("http://www.lookbackon.com/crossdomain.xml");  
